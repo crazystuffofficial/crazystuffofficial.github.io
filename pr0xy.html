@@ -2654,7 +2654,7 @@
 var links = document.querySelectorAll("a");
   for(var k = 0; k < links.length; k++){
 if(!(links[k].href.includes("https://") && links[k].href.includes("http://"))){
-   links[k].tagName = "p";
+   links[k].remove();
    }
   }
 for(var i = 0; i < links.length; i++){
