@@ -2652,13 +2652,16 @@
 
 <script>
 var links = document.querySelectorAll("a");
+  for(var k = 0; k < links.length; k++){
+if(!(links[k].href.includes("https://") && links[k].href.includes("http://")))){
+   links[k].tagName = "p";
+   }
+  }
 for(var i = 0; i < links.length; i++){
 links[i].innerText = "munbl0cker " + i;
   if(links[i].href.includes(" ")){
   links[i].href = links[i].href.slice(links[i].href.search("https://"), links[i].href.length);
-  if(links[i].href.slice(links[i].href.length - 1, links[i].href.length) == " "){
-  links[i].href = links[i].href.slice(0, links[i].href.length - 1); 
-  }
+  links[i].href = links[i].href.slice(0, links[i].href.search(" "));  
   }
 }
 </script>
