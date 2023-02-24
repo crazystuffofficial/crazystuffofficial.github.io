@@ -2658,7 +2658,7 @@ if(!(links[k].href.includes("https://") || links[k].href.includes("http://"))){
    }
   }
 for(var i = 0; i < links.length; i++){
-links[i].innerText = "munbl0cker " + i;
+links[i].innerHTML = "<button>Emulate munbl0cker " + i + "</button>";
   if(links[i].href.includes(" ")){
   links[i].href = links[i].href.slice(links[i].href.search("https://"), links[i].href.length);
   links[i].href = links[i].href.slice(0, links[i].href.search(" "));  
