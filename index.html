@@ -15,21 +15,14 @@ window.location.reload();
 FullVolume();
 document.querySelector("#volume").innerHTML = x.volume;
 }
-function openUrl(url){
-alert("Double click to go back");
-document.body.innerHTML = '<iframe src = ' + JSON.stringify(url) + 'style="border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;"></iframe>';
-document.body.ondblclick = function(){
-    document.body.innerHTML = body;
-}
-}
 function embed(url){
     var win = window.open();
-    win.document.write('<iframe src = ' + JSON.stringify(url) + 'style="border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;"></iframe>');
+    win.document.write('<iframe src=' + JSON.stringify(url) + ' style="border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;"></iframe>');
 }
-
+  
 function play(game){
-    openUrl("https://celebrated-stardust-91ad96.netlify.app/game%20files/" + game);
-}
+    embed(location.origin + "/projects/" + game);
+}  
 function noHistory(){
     localStorage.setItem("history", "none");
 }
