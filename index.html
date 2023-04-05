@@ -586,7 +586,7 @@ plane and the time is changing constantly.</p></h4>
      if(localStorage.getItem("history") == "none"){
          document.querySelector("input").onclick = function(){
          localStorage.setItem("history", "shown");
-          window.location.reload();
+          top.location.reload();
      };
      document.querySelector("label").innerHTML = "Click this to show history";
      }
