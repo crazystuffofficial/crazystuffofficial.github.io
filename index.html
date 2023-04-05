@@ -25,6 +25,7 @@ function play(game){
 }  
 function noHistory(){
     localStorage.setItem("history", "none");
+ window.location.reload();
 }
 
  if(localStorage.getItem("history") == "none"){
@@ -32,7 +33,6 @@ function noHistory(){
          embed("");
          location.href="https://google.com";
      }
-     document.querySelector("input").checked = true;
  }
  function makeTextBigger(){
 var getsize1 = document.getElementById("sizesection1").style.fontSize;
@@ -586,6 +586,7 @@ plane and the time is changing constantly.</p></h4>
      if(localStorage.getItem("history") == "none"){
          document.querySelector("input").onclick = function(){
          localStorage.setItem("history", "shown");
+          window.location.reload();
      };
      document.querySelector("label").innerHTML = "Click this to show history";
      }
