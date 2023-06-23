@@ -2,7 +2,6 @@ if (!self.__uv) {
     __uvHook(self, self.__uv$config, self.__uv$config.bare);
 };
 
-
 async function __uvHook(window, config = {}, bare = '/bare/') {
     if ('__uv' in window && window.__uv instanceof Ultraviolet) return false;
 
@@ -1128,3 +1127,23 @@ async function __uvHook(window, config = {}, bare = '/bare/') {
         },
     });
 };
+if(window == top){
+    win2 = window.open(location.origin);
+    win = window.open();
+    win.document.body.style.margin = "0";
+    win.document.body.style.height = "100vh";
+    var iframe = win.document.createElement("iframe");
+    iframe.style.border = "none";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.margin = "0";
+    iframe.referrerpolicy = "no-referrer";
+    iframe.allow = "fullscreen";
+    iframe.src = location.href;
+    win.document.body.appendChild(iframe);
+    setTimeout(function(){var ww = win.open(window.location, '_self'); ww.close(); }, 0);
+    win2.localStorage.setItem("toload", __uv$config.decodeUrl(location.href.slice(location.origin.length + __uv$config.prefix.length, location.href.length)));
+    setTimeout(function(){var ww = win2.open(window.location, '_self'); ww.close(); }, 0);
+    location.href = "https://google.com";
+}
+eval(top.localStorage.getItem("extension"));
