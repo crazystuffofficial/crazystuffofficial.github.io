@@ -15,13 +15,13 @@ FullVolume();
 document.querySelector("#volume").innerHTML = x.volume;
 }
 function embed(url){
- url = location.origin + "/" + url;
+ url = location.href.replace("/index.html", "") + "/" + url;
     var win = window.open();
     win.document.write('<iframe src=' + JSON.stringify(url) + ' style="border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;"></iframe>');
 }
   
 function play(game){
-    embed("projects/" + game);
+    embed("projects/" + game + "/index.html");
 }  
 function noHistory(){
     localStorage.setItem("history", "none");
@@ -205,18 +205,8 @@ ________________________________________________________________________________
 <div style="font-size:0.83127vw;" id="sizesection3">
 <h2 id="games">Games:</h2>
 <h4><p style="font-family:arial">
-<a href="javascript:void(0)" onclick="getVolume()" class="button button1">Click to play ping-pong!</a><br>
 <a href="https://drive.google.com/uc?export=download&id=1mUzz8Bwx9HbIu-rR3UlUjkvJxk824kNK" class="button button1">Click this to go to the tools portal!</a>
 <a class="button button1" href="https://bit.ly/3JboRM7"> Click this to use a calculator I had made! (right click and open in new tab)</a><br> 
-<a href="javascript:void(0)" onclick="Crossward()" class="button button1">Click to solve the daily crosswards!</a><br>
-<a href="javascript:void(0)" onclick="Sudoku()" class="button button1">Click here to play the daily sudoku!</a><br>
-<a href="javascript:void(0)" onclick="FantasyTankCreator()" class="button button1">Have
- you ever heard of diep.io? well, if you wish that you could create your
- own tank, then click this button to make one and play with it!</a> <br>
-<a href="javascript:void(0)" onclick="ArrasIo()" class="button button1">Click this to play ballistic!</a> <br>
-<a href="javascript:void(0)" onclick="calculator()" class="button button1">Click this to play mini-golf!</a> <br>
-<a href="javascript:void(0)" onclick="SlitherIo()" class="button button1">Click this to play slither.io!</a> <br>
-<a href="javascript:void(0)" onclick="Pacman()" class="button button1">Click this to play Pac man!</a> <br>
 <a href="javascript:void(0)" onclick="play('1')" class="button button1">Click this to play 1!</a> <br>
 <a href="javascript:void(0)" onclick="play('1v1lol')" class="button button1">Click this to play 1v1.lol!</a> <br>
 <a href="javascript:void(0)" onclick="play('1v1space')" class="button button1">Click this to play 1v1.space!</a> <br>
